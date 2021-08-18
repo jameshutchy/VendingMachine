@@ -1,0 +1,158 @@
+body{
+    background-color: #CACFDB;
+}
+#vending-machine {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+ 
+
+}
+#theMachine {
+    border-radius: 2%;
+    display: flex;
+    width: 40em;
+    background-color:#6694AC;
+    margin: 2em 1em 0em 5em;
+   
+}
+#window{
+    border-radius: 2%;
+    background-color: #73747A;
+    margin: 1em;
+    width: 25em;
+}
+#productScreen{
+    margin: 1em;
+    background-color: white;
+    width: 23em;
+}
+.products{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#productDispenser{
+    background-color: white;
+    height: 8em;
+    margin: 1em;
+    margin-top: 2em;
+    width: 23em;
+}
+#interface{
+    margin: 1em 0em;
+    border-radius: 2%;
+    width: 12em;
+    background-color: #73747A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#interfaceScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: greenyellow;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #343539;
+    height:10em;
+    width:10em;
+}
+#keypad {
+    margin-left: 0.4em;
+    display:flex;
+    flex-wrap: wrap;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 10em;
+    height: 13em; 
+}
+.keys {
+    height: 3.7em;
+    width: 3.7em;
+}
+#coinInsert {
+    display: flex;
+    justify-content: center;
+    width: 7em;
+    height: 5em;
+    margin-top: 1em;  
+}
+#changeDispense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: greenyellow;
+    width: 8em;
+    height: 5em;
+    background-color: #343539;
+}
+#changeDispense > p {
+    margin: 0;
+
+}
+#addObjects {
+    display: flex;
+    flex-direction: column;
+}
+#prePopulateBtn {
+    border: 4px solid black;
+    background-color: greenyellow;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 3em;
+    height: 6em;
+    width: 8em;
+    border-radius: 30%;
+
+}
+#customerBox {
+    display:flex;
+    align-items: center;
+}
+#customers {
+    margin-left: 12em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    border-radius: 15%;
+    height: 2em;
+    background-color: greenyellow;
+}
+#coins {
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: center;
+    align-items: center;
+    width: 30em;
+    height: 6em;
+    background-color: #CACFDB;
+    display: flex;
+    
+}
+#objectValues {
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-evenly;
+    width: 53em;
+    height: 20em;
+}
+.objectTables{
+    font-family: "Lucida Console", "Courier New", monospace;
+    border : #73747A solid 3px;
+    background-color: #6694AC;
+
+}
+.objectTables > td, th{
+    padding: .5em;
+}
+
+
+
+
+
+
