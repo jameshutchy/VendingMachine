@@ -1,17 +1,17 @@
 /* globals describe beforeEach expect it Controller */
 
-describe('Iteration 1', () => {
+describe('Coin Product + Logic', () => {
   describe('Coin', () => {
       
     let aCoin
     beforeEach(() => {
-      aCoin = new Coin(2, 10)
+      aCoin = new Coin(2, 200, 10)
     })
     it('should have a .value property', () => {
       expect('value' in aCoin).to.be.true
     })
-    it('should be 2', () => {
-      expect(aCoin.value).to.equal(2)
+    it('should be 200', () => {
+      expect(aCoin.value).to.equal(200)
     })
 
       it('should have an .amount property', () => {
@@ -110,11 +110,11 @@ describe('Iteration 1', () => {
       theVM.purchase = 200
       theVM.addProduct(123, 'chips', 100, 20)
       theVM.selectedProduct = theVM.findProduct(123)
-      theVM.addCoin(200, 30)
-      theVM.addCoin(100, 30)
-      theVM.addCoin(50, 30)
-      theVM.addCoin(20, 30)
-      theVM.addCoin(10, 30)
+      theVM.addCoin(2, 200, 30)
+      theVM.addCoin(1, 100, 30)
+      theVM.addCoin(05, 50, 30)
+      theVM.addCoin(02, 20, 30)
+      theVM.addCoin(01, 10, 30)
       coin1 = theVM.allMyCoins[1]
       theVM.change = 100
       theVM.updateCoin()
@@ -135,11 +135,11 @@ describe('Update coin quantity (product price 120 and purchase input 200 so coin
     theVM.purchase = 200
     theVM.addProduct(123, 'chips', 120, 20)
     theVM.selectedProduct = theVM.findProduct(123)
-    theVM.addCoin(200, 30)
-    theVM.addCoin(100, 30)
-    theVM.addCoin(50, 30)
-    theVM.addCoin(20, 30)
-    theVM.addCoin(10, 30)
+    theVM.addCoin(2, 200, 30)
+    theVM.addCoin(1, 100, 30)
+    theVM.addCoin(05, 50, 30)
+    theVM.addCoin(02, 20, 30)
+    theVM.addCoin(01, 10, 30)
     coin05 = theVM.allMyCoins[2]
     coin02 = theVM.allMyCoins[3]
     coin01 = theVM.allMyCoins[4]
@@ -189,7 +189,7 @@ describe('update product quantity (product quantity 5, product price 100 and pur
 /// need to before each "everything" then check tests where i can LOL
 
 //// now tests for iteration 2 new stuff (even tho i have parsed tests in ^ that i updated in iteration 2)
-describe('Iteration 2', () => {
+describe('Customer + Logic', () => {
 describe('Customer', () => {
       
   let aCustomer

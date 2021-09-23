@@ -11,115 +11,119 @@
 <section id="vending-machine">
   <div id="theMachine">
   <div id="window">
-    <table id="productScreen">
+    <table id="productScreen" >
       <tr>
         <td>
-          <div class="products">
-            <img src="images/coke.jfif" alt="Bottle of Coke" width="100" height="100">
-            <p>123</p>
+          <div class="products" v-if="hasProductData">
+            <img id="123" src="images/coke.jfif" alt="Bottle of Coke" width="100" height="100">
+            <p>code:123</p>
           </div>
         </td>
         <td>
-          <div class="products">
-            <img src="images/cokeZero.jpg" alt="Bottle of Coke zero" width="100" height="80">
-            <p>137</p>
+          <div class="products" v-if="hasProductData">
+            <img id="137" src="images/cokeZero.jpg" alt="Bottle of Coke zero" width="100" height="80">
+            <p>code:137</p>
           </div>
         </td>
         <td>
-          <div class="products">
-            <img src="images/fanta.jpg" alt="Bottle of fanta" width="100" height="80">
-            <p>158</p>
+          <div class="products" v-if="hasProductData">
+            <img id="158" src="images/fanta.jpg" alt="Bottle of fanta" width="100" height="80">
+            <p>code:158</p>
           </div>
         </td>
-        <tr></tr>
+        <tr>
         <td>
-          <div class="products">
-            <img src="images/h2go.jpg" alt="Bottle of h2go" width="100" height="80">
-            <p>267</p>
-          </div>
-        </td>
-        <td>
-          <div class="products">
-            <img src="images/landp.jpg" alt="Bottle of l and p" width="100" height="80">
-            <p>289</p>
+          <div class="products" v-if="hasProductData">
+            <img id="267" src="images/h2go.jpg" alt="Bottle of h2go" width="100" height="80">
+            <p>code:267</p>
           </div>
         </td>
         <td>
-          <div class="products">
-            <img src="images/powerade.jfif" alt="Bottle of powerade" width="100" height="80">
-            <p>254</p>
+          <div class="products" v-if="hasProductData">
+            <img  id="289" src="images/landp.jpg" alt="Bottle of l and p" width="100" height="80">
+            <p>code:289</p>
+          </div>
+        </td>
+        <td>
+          <div class="products" v-if="hasProductData">
+            <img id="254" src="images/powerade.jfif" alt="Bottle of powerade" width="100" height="80">
+            <p>code:254</p>
           </div>
         </td>
       </tr>
-      <tr></tr>
+      <tr>
         <td>
-          <div class="products">
-            <img src="images/sparkWater.jfif" alt="Bottle of sparkling water" width="100" height="80">
-            <p>312</p>
+          <div class="products" v-if="hasProductData">
+            <img id="312" src="images/sparkWater.jfif" alt="Bottle of sparkling water" width="100" height="80">
+            <p>code:312</p>
           </div>
         </td>
         <td>
-          <div class="products">
-            <img src="images/sprite.jpg" alt="Bottle of sprite" width="100" height="80">
-            <p>356</p>
+          <div class="products" v-if="hasProductData">
+            <img id="356" src="images/sprite.jpg" alt="Bottle of sprite" width="100" height="80">
+            <p>code:356</p>
           </div>
         </td>
         <td>
-          <div class="products">
-            <img src="images/water.jfif" alt="Bottle of water" width="100" height="80">
-            <p>380</p>
+          <div class="products" v-if="hasProductData">
+            <img id="380" src="images/water.jfif" alt="Bottle of water" width="100" height="80">
+            <p>code:381</p>
           </div>
         </td>
       </tr>   
       </table>
-    </output>
-      </table>
       <div id="productDispenser">
-        <output id="paymentOutput">
-          <p v-if="theVM.hasMoney">{{theVM.selectedProduct.name}} Product Dispensed</p>
-          <p v-if="theVM.noMoney">Insert more coins to purchase</p>
-        </output>
+          <div v-if="theVM.hasMoney">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Coke'" src="images/coke.jfif" alt="Bottle of Coke" width="100" height="100" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Coke Zero'" src="images/cokeZero.jpg" alt="Bottle of Coke zero" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Fanta'" src="images/fanta.jpg" alt="Bottle of fanta" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'H2GO'" src="images/h2go.jpg" alt="Bottle of h2go" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'L&P'" src="images/landp.jpg" alt="Bottle of l and p" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Powerade'" src="images/powerade.jfif" alt="Bottle of powerade" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Spark Kiwi Blue'" src="images/sparkWater.jfif" alt="Bottle of sparkling water" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Sprite'" src="images/sprite.jpg" alt="Bottle of sprite" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+            <img class="dispensedProduct" v-if="theVM.selectedProduct.name === 'Kiwi Blue'" src="images/water.jfif" alt="Bottle of water" width="100" height="80" draggable="true" ondragstart="dragstart_handler1(event)">
+          </div>
       </div>
 
   </div>
 
   <div id="interface">
     <div id="interfaceScreen">
-      <p v-if="hasKey">{{this.code}}</p>
+      <p>{{this.keyCode}}</p>
       <p v-if="choseProduct">{{this.theProductName}} {{this.theProductPrice}}c</p>
       <p>{{this.inputAmount}}</p>
     </div>
     <table id="keypad">
-      <tr></tr>
-      <td><input class="keys" type="button" value="1" v-on:click="add1"></td>
-      <td><input class="keys" type="button" value="2" v-on:click="add2"></td>
-      <td><input class="keys" type="button" value="3" v-on:click="add3"></td>
+      <tr>
+      <td><input class="keys" type="button" value="1" v-on:click="addkey('1')"></td>
+      <td><input class="keys" type="button" value="2" v-on:click="addkey('2')"></td>
+      <td><input class="keys" type="button" value="3" v-on:click="addkey('3')"></td>
     </tr>
     <tr>
-     <td><input class="keys" type="button" value="4" v-on:click="add4"></td>
-      <td><input class="keys" type="button" value="5" v-on:click="add5"></td>
-      <td><input class="keys" type="button" value="6" v-on:click="add6"></td>
+     <td><input class="keys" type="button" value="4" v-on:click="addkey('4')"></td>
+      <td><input class="keys" type="button" value="5" v-on:click="addkey('5')"></td>
+      <td><input class="keys" type="button" value="6" v-on:click="addkey('6')"></td>
     </tr>
     <tr>
-      <td><input class="keys" type="button" value="7" v-on:click="add7"></td>
-      <td><input class="keys" type="button" value="8" v-on:click="add8"></td>
-      <td><input class="keys" type="button" value="9" v-on:click="add9"></td>
+      <td><input class="keys" type="button" value="7" v-on:click="addkey('7')"></td>
+      <td><input class="keys" type="button" value="8" v-on:click="addkey('8')"></td>
+      <td><input class="keys" type="button" value="9" v-on:click="addkey('9')"></td>
     </tr>
     <tr>
       <td><input class="keys" type="button" value="OK" v-on:click="okClick"></td>
-      <td><input class="keys" type="button" value="0" v-o:nclick="add0"></td>
-      <td><input class="keys" type="button" value="EXIT" v-on:click="giveChange"></td>
+      <td><input class="keys" type="button" value="0" v-on:click="addkey('0')"></td>
+      <td><input class="keys" type="button" value="EXIT" v-on:click="exitPressed"></td>
     </tr>
     </table>
  
 
   <div id="target" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
-    <img src="images/insertCoin.png" alt="insert coin image" width="100px" height="80px">
+    <img src="images/insertCoin.png" alt="insert coin image" width="100" height="80">
   </div>
 
   <div id="changeDispense">
-    <p v-if="theVM.hasChange">Change:</p>
-    <p v-if="theVM.hasChange">{{this.theVM.change}}</p>
+    <p v-if="theVM.hasChange">Change:<br>{{this.theVM.change}}</p>
   </div>
   </div>
  </div>
@@ -129,23 +133,39 @@
 
     <div v-if="hasCustomerData" id="customerBox">
       <h2>Customer {{selectedCustomerID}}</h2>
+      <img v-if="arrowImg === 1" id="arrow1" src="images/arrow.png" alt="green arrow" height="80" width="150">
       <select v-on:change="customerSelected($event)" name="Customers" id="customers">
         <option>Select Customer</option>
         <option v-for="customer in getCustomers()" v-bind:value="customer.id" id="selectedCustomer">{{customer.id}}</option>
       </select>
+      <img v-if="arrowImg === 4" id="arrow4" src="images/arrow.png" alt="green arrow" height="80" width="150">
+      <img id="backpack" src="images/backpack.jfif" alt="blue backpack" ondrop="drop_handler1(event)" ondragover="dragover_handler1(event)" width="200" height="230">
     </div>
 
       <div v-if="hasCoinData" id="coins">
-        <div><img id="coin2" src="images/coin2.jfif" alt="Two dollar coin" draggable="true" ondragstart="dragstart_handler(event)" width="60" height="60"></div>
-        <div><img id="coin1" src="images/coin1.jpg" alt="one dollar coin" draggable="true" ondragstart="dragstart_handler(event)" width="56" height="56"></div>
-        <div><img id="coin50" src="images/coin05.jpg" alt="fifty cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="54" height="54"></div>
-        <div><img id="coin20" src="images/coin02.jfif" alt="Twenty cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="50" height="50"></div>
-        <div><img id="coin10" src="images/coin01.jpg" alt="Ten cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="45" height="45"></div>
+        <img v-if="arrowImg === 3" id="arrow3" src="images/arrow.png" alt="green arrow" height="80" width="150">
+        <div>
+          <img id="coin2" src="images/coin2.jfif" alt="Two dollar coin" draggable="true" ondragstart="dragstart_handler(event)" width="60" height="60">
+        </div>
+        <div>
+          <img id="coin1" src="images/coin1.jpg" alt="one dollar coin" draggable="true" ondragstart="dragstart_handler(event)" width="56" height="56">
+        </div>
+        <div>
+          <img id="coin50" src="images/coin05.jpg" alt="fifty cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="54" height="54">
+        </div>
+        <div>
+          <img id="coin20" src="images/coin02.jfif" alt="Twenty cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="50" height="50">
+        </div>
+        <div>
+          <img id="coin10" src="images/coin01.jpg" alt="Ten cent coin" draggable="true" ondragstart="dragstart_handler(event)" width="45" height="45">
+        </div>
       </div>
+     
       <div v-if="pressedButton">
-        <button id="prePopulateBtn" type="button" v-on:click="prePopulate">Click This!</button>
+        <button id="prePopulateBtn" type="button" v-on:click="prePopulate">Fill Vending Machine</button>
       </div>
   <div id="objectValues">
+    <img v-if="arrowImg === 2" id="arrow2" src="images/arrow.png" alt="green arrow" height="80" width="150">
     <div id="customerValues">
       <table>  
         <tr class="objectTables">
@@ -155,12 +175,10 @@
         <td>ID</td>
         <td>Amount</td> 
         </tr> 
-        <output id="customerOutput" v-if="hasCustomerData">
           <tr class="objectTables" v-for="customer in getCustomers()">
           <td>{{customer.id}}</td>
           <td>{{customer.amount}}c</td>
         </tr>
-      </output> 
       </table>
     </div>
 
@@ -175,7 +193,6 @@
         <td>Price</td>
         <td>Quantity</td>
       </tr>
-      <output class="productOutput" v-if="hasProductData">
         <tr class="objectTables" v-for="product in getProducts()">
           <td>{{product.id}}</td>
           <td>{{product.name}}</td>
@@ -183,7 +200,7 @@
           <td>{{product.quantity}}</td>
       </tr>   
       </table>
-    </output>
+
       
   </div>
 
@@ -196,14 +213,13 @@
       <td>Value</td>
       <td>Quantity</td>
       </tr>
-    <output id="CoinOutput" v-if="hasCoinData">
       <tr class="objectTables"  v-for="coin in getCoins()">
       <td>{{coin.value}}c</td>
       <td>{{coin.amount}}</td>
       </tr> 
     </table>
-    </output>
   </div>
+</div>
 </div>
 </section>
 
@@ -227,6 +243,7 @@
      // Add the target element's id to the data transfer object
      ev.dataTransfer.setData("coin", ev.target.id);
      ev.dataTransfer.effectAllowed = "move";
+
     }
     function dragover_handler(ev) {
      ev.preventDefault();
@@ -236,11 +253,30 @@
      ev.preventDefault();
      // Get the id of the target and add the moved element to the target's DOM
      const data = ev.dataTransfer.getData("coin");
-     ev.target.appendChild(document.getElementById(data));
-     console.log(data)
       app.coinValue = data
       console.log(app.coinValue)
-       app.coinDeposited()
+      let coinInsert = new Audio('sounds/coinInsert.wav');
+      coinInsert.play();
+      app.coinDeposited()
+     }
+
+     function dragstart_handler1(ev) {
+     // Add the target element's id to the data transfer object
+     ev.dataTransfer.setData("coin", ev.target.id);
+     ev.dataTransfer.effectAllowed = "move";
+
+    }
+    function dragover_handler1(ev) {
+     ev.preventDefault();
+     ev.dataTransfer.dropEffect = "move"
+    }
+    function drop_handler1(ev) {
+     ev.preventDefault();
+     // Get the id of the target and add the moved element to the target's DOM
+      app.clearScreen()
+     let bagZipper = new Audio('sounds/bagZipper.wav');
+      bagZipper.play();
+      app.arrowImg += 1
      }
     </script>
 
@@ -250,6 +286,7 @@
     var app = new Vue({
       el: '#vending-machine',
       data: {
+        arrowImg: 0,
         theProductName: '',
         theProductPrice: '',
         inputAmount: '',
@@ -279,7 +316,7 @@
 	        this.theVM.addProduct(254, 'Powerade', 320, 10)
 	        this.theVM.addProduct(312, 'Spark Kiwi Blue', 230, 15)
 	        this.theVM.addProduct(356, 'Sprite', 300, 7)
-	        this.theVM.addProduct(380, 'Kiwi Blue', 300, 15)
+	        this.theVM.addProduct(381, 'Kiwi Blue', 300, 15)
           this.theVM.addCoin('coin2', 200, 30)
 	        this.theVM.addCoin('coin1', 100, 30)
 	        this.theVM.addCoin('coin50', 50, 30)
@@ -295,6 +332,8 @@
           this.hasCustomerData = true
           this.hasCoinData = true
           this.hasProductData = true
+          this.sayMessage("Welcome to Arah Vending Machine, please select a Customer.")
+          this.arrowImg += 1
         },
 
         getProducts: function () {
@@ -313,6 +352,8 @@
           this.theVM.selectedCustomer = this.theVM.findCustomer(this.selectedCustomerID)
           //console.log(this.theVM.selectedCustomer)
           //console.log(this.theVM.selectedCustomer.amount)
+          this.sayMessage("Hello Customer " +  this.theVM.selectedCustomer.id + " Please key in the your desired product")
+          this.arrowImg +=1
         },
 
         purchaseProduct: function(){
@@ -321,16 +362,28 @@
             alert('The Customer doesnt have that much money')
           
         }
+          else {
           this.theVM.conditionsOfPurchase()
-          this.theVM.purchase = ''
-          this.inputAmount = ''
-          this.theProductName = ''
           this.theProductPrice = ''
+          this.inputAmount = ''
           this.code = ''
           this.keyCode = ''
           this.choseProduct = false
           this.hasKey = false
-
+            }
+          if (this.theVM.hasMoney){
+            console.log(this.selectedProductID)
+            let productDrop = new Audio('sounds/productDrop.wav');
+            productDrop.play();
+            this.sayMessage("Thank you Enjoy your " + this.theProductName + " Don't forget to put it in your backpack")
+            this.arrowImg += 1       
+          }
+          else if (this.theVM.noMoney){
+            this.sayMessage("You have not inserted enough money, come back when you have enough")
+            this.theVM.change = this.theVM.purchase
+            this.theVM.hasChange = true
+            
+          }
           },
 
           okClick: function(){
@@ -350,72 +403,56 @@
             }
           
           },
-        
-        // work out change next how to do the drop and drag THIS IS WHERE YOU STOPPED!!!!!
+  
         checkKeyCode: function() {
          if (this.keyCode.length == 3) {
             this.hasKey = true
             this.code = this.keyCode
             this.selectedProductID = Number(this.code)
-            console.log(this.selectedProductID)
             this.theVM.selectedProduct = this.theVM.findProduct(this.selectedProductID)
             this.theProductPrice = this.theVM.selectedProduct.price
             this.theProductName = this.theVM.selectedProduct.name
             this.choseProduct = true
-         }
+            this.sayMessage("You have chosen " + this.theProductName + " Please insert " + this.theProductPrice + " cents and press ok to purchase")
+            this.arrowImg +=1
+           }
          },
-         add1: function(){
-         this.keyCode = this.keyCode + "1"
-         this.checkKeyCode()
-         console.log(this.keyCode)
-         },
-         add2: function(){
-         this.keyCode = this.keyCode + "2"
+         addkey: function(num){
+         this.keyCode = this.keyCode + num
+         console.log(this.keycode)
          this.checkKeyCode()
          },
-         add3: function(){
-         this.keyCode = this.keyCode + "3"
-         this.checkKeyCode()
-         },
-         add4: function(){
-         this.keyCode = this.keyCode + "4"
-         this.checkKeyCode()
-         },
-         add5: function(){
-         this.keyCode = this.keyCode + "5"
-         this.checkKeyCode()
-         },
-         add6: function(){
-         this.keyCode = this.keyCode + "6"
-         this.checkKeyCode()
-         },
-         add7: function(){
-         this.keyCode = this.keyCode + "7"
-         this.checkKeyCode()
-         },
-         add8: function(){
-         this.keyCode = this.keyCode + "8"
-         this.checkKeyCode()
-         },
-         add9: function(){
-         this.keyCode = this.keyCode + "9"
-         this.checkKeyCode()
-         },
-         add0: function(){
-         this.keyCode = this.keyCode + "0"
-         this.checkKeyCode()
-         },
-         giveChange: function() {
-         console.log("something")
+         exitPressed: function() {
+         this.theVM.change = this.inputAmount
+         this.theVM.hasChange = true
+         this.sayMessage("Are my products not good enough?")
          },
          coinDeposited: function() {
-          console.log("worked")
           console.log(this.theVM.allMyCoins)
           this.theVM.insertedCoin = this.theVM.findCoin(this.coinValue)
           console.log(this.theVM.insertedCoin)
           this.inputAmount = Number(this.inputAmount) + this.theVM.insertedCoin.value
-        
+        },
+        clearScreen: function(){
+          this.code = ''
+          this.theVM.selectedProduct = ''
+          this.hasKey = false
+          this.choseProduct = false
+          this.inputAmount = ''
+          this.theVM.hasMoney = false
+          this.theVM.noMoney = false
+          this.theVM.hasChange = false
+        },
+        sayMessage: function(message){
+          var synth = window.speechSynthesis
+          var voices = synth.getVoices()
+          var utterThis = new SpeechSynthesisUtterance(message)
+          utterThis.rate = 1.2
+          utterThis.pitch = 1.2
+          utterThis.voices = voices[0]
+          synth.speak(utterThis)
         }
+
       }
       })
   </script>

@@ -31,7 +31,7 @@ class VendingMachine 	{
 		this.allMyProducts.push(aNewProduct)
 
 	}
-	
+	// creating customer object
 	addCustomer(newCustomerID, newCustomerAmount) {
 		let anewCustomer = new Customer(newCustomerID, newCustomerAmount)
 		this.allMyCustomers.push(anewCustomer)
